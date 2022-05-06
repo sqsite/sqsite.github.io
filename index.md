@@ -42,37 +42,36 @@ implementation group: 'io.github.sqsite', name: 'auto.browser', version: '0.0.3'
 
 1. If you do not need any browser options
 ```java
-Browser browser = new Browser(); //This will start ChromeDriver as default
+Browser.open(url); //This will start ChromeDriver as default
 ```
 ```java
 # .. after the test call the close function
-browser.close();
+Browser.close();
 ```
 2. To set your own max wait time
 ```java
-browser.withWaitTime(Duration.ofSeconds(15));
+Browser.withWaitTime(Duration.ofSeconds(15));
 ```
 3. To run tests in headless mode or to add any other browser options
 ```java
 //this example is for Chrome browser 
 ChromeOptions options = new ChromeOptions();
 options.setHeadless(true);
-browser.withOptions(options); //add the option
+Browser.withOptions(options); //add the option
 ```
 4. To run with other browsers; for example
 ```java
-browser.type("edge");
+Browser.type("edge");
 ```
 ```java
 # ..combining all these options
-Browser browser = new Browser();
 ChromeOptions options = new ChromeOptions();
 options.setHeadless(true);
-browser.withWaitTime(Duration.ofSeconds(15))
+Browser.withWaitTime(Duration.ofSeconds(15))
       .type("edge")
       .withOptions(options)
       .open("https://google.co.nz");
-browser.close();
+Browser.close();
 ```
 
 
