@@ -45,7 +45,7 @@ implementation group: 'io.github.sqsite', name: 'auto.browser', version: '0.0.3'
 Browser.open(url); //This will start ChromeDriver as default
 ```
 ```java
-# .. after the test call the close function
+# .. after the test; call the close function
 Browser.close();
 ```
 2. To set your own max wait time
